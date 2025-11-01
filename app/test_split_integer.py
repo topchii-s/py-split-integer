@@ -23,15 +23,13 @@ def test_expected_values(value: int, parts: int, expected: list[int]) -> None:
 @pytest.mark.parametrize("value, parts", [(10, 3), (23, 7), (32, 6)])
 def test_sum_equals_value(value: int, parts: int) -> None:
     """Sum of parts must equal the original value."""
-    result = split_integer(value, parts)
-    assert sum(result) == value
+    assert sum(split_integer(value, parts)) == value
 
 
 @pytest.mark.parametrize("value, parts", [(10, 3), (23, 7), (32, 6)])
 def test_parts_count(value: int, parts: int) -> None:
     """Returned list must contain exactly 'parts' elements."""
-    result = split_integer(value, parts)
-    assert len(result) == parts
+    assert len(split_integer(value, parts)) == parts
 
 
 @pytest.mark.parametrize("value, parts", [(10, 3), (23, 7), (32, 6)])
